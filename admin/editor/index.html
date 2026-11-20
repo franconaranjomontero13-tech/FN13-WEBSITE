@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FN13 | Editor Universal</title>
+  <link rel="stylesheet" href="editor.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="editor.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../index.html">FN<span>13</span></a>
+    <div class="header-actions">
+      <span id="user-label">Administrador</span>
+      <button id="logout-btn" class="btn btn-outline">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-heading">
+      <div>
+        <p class="eyebrow">FN13 RACING / CMS</p>
+        <h1>Editor universal</h1>
+        <p class="muted">Administra el contenido de tu sitio desde un solo lugar.</p>
+      </div>
+      <a href="../index.html" class="back-link">← Volver al administrador</a>
+    </div>
+
+    <div class="workspace">
+      <section class="panel editor-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">GESTIÓN DE CONTENIDO</p>
+            <h2>Editor</h2>
+          </div>
+          <span class="status">FN13 CMS</span>
+        </div>
+
+        <label for="section-select">Seleccionar sección</label>
+        <select id="section-select">
+          <option value="profile">Perfil del piloto</option>
+          <option value="career">Trayectoria</option>
+          <option value="calendar">Calendario</option>
+          <option value="sponsors">Patrocinadores</option>
+          <option value="gallery">Galería</option>
+          <option value="news">Noticias</option>
+          <option value="statistics">Estadísticas</option>
+          <option value="custom">Sección personalizada</option>
+        </select>
+
+        <div class="section-description" id="section-description">
+          Información principal del piloto.
+        </div>
+
+        <form id="content-form">
+          <input type="hidden" id="record-id">
+
+          <div class="form-heading">
+            <h3 id="form-title">Nuevo contenido</h3>
+            <span id="form-mode">Nuevo registro</span>
+          </div>
+
+          <label for="title">Título *</label>
+          <input id="title" type="text" maxlength="150"
+                 placeholder="Escribe el título" required>
+
+          <div id="dynamic-fields"></div>
+
+          <label class="publish-option">
+            <input type="checkbox" id="is-published">
+            Publicar este contenido
+          </label>
+
+          <div class="button-row">
+            <button class="btn btn-primary" id="save-btn" type="submit">
+              Guardar contenido
+            </button>
+            <button class="btn btn-outline hidden" id="cancel-btn" type="button">
+              Cancelar edición
+            </button>
+          </div>
+
+          <p id="message" class="message" role="status"></p>
+        </form>
+      </section>
+
+      <section class="panel preview-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">VISTA PREVIA</p>
+            <h2>Así se verá</h2>
+          </div>
+          <span class="status">Previsualización</span>
+        </div>
+
+        <div class="preview-content">
+          <p class="preview-category" id="preview-category">FN13 RACING</p>
+          <h2 id="preview-title">Título del contenido</h2>
+          <div id="preview-fields" class="preview-fields">
+            <p class="muted">El contenido aparecerá aquí mientras editas.</p>
+          </div>
+          <span id="preview-status" class="preview-status">BORRADOR</span>
+        </div>
+      </section>
+    </div>
+
+    <section class="records-section">
+      <div class="records-heading">
+        <div>
+          <p class="eyebrow">CONTENIDO GUARDADO</p>
+          <h2 id="records-title">Registros de Perfil del piloto</h2>
+        </div>
+        <span id="record-count" class="status">0 registros</span>
+      </div>
+
+      <div id="records-list" class="records-list">
+        <p class="muted">Cargando contenido...</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

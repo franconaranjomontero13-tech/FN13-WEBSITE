@@ -1,0 +1,631 @@
+
+/* =================================
+   FN13 - FRANCO NARANJO
+   ================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #090909;
+    color: #f4f4f4;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.section {
+    padding: 110px 9%;
+    position: relative;
+}
+
+.section-label {
+    color: #e5232d;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+.section h2 {
+    font-size: clamp(38px, 6vw, 75px);
+    font-weight: 900;
+    line-height: 0.98;
+    text-transform: uppercase;
+}
+
+.section h2 span {
+    display: block;
+    color: #e5232d;
+}
+
+
+/* HEADER */
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 25px 9%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.logo span {
+    color: #e5232d;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #f4f4f4;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1.3px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #e5232d;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 150px 9% 80px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.92) 0%,
+            rgba(0, 0, 0, 0.55) 48%,
+            rgba(0, 0, 0, 0.1) 100%
+        ),
+        url("assets/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 10vw, 125px);
+    font-weight: 900;
+    line-height: 0.85;
+    letter-spacing: -5px;
+    text-transform: uppercase;
+}
+
+.hero h1 span {
+    display: block;
+    color: #e5232d;
+}
+
+.hero p {
+    margin-top: 30px;
+    color: #c5c5c5;
+    font-size: 15px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.hero-number {
+    margin-top: 35px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #e5232d;
+    letter-spacing: 5px;
+}
+
+
+/* ABOUT */
+
+.about {
+    background: #111111;
+}
+
+.about-content {
+    max-width: 850px;
+    margin-top: 35px;
+}
+
+.about-content p {
+    color: #a2a2a2;
+    font-size: 17px;
+    line-height: 1.9;
+    margin-top: 25px;
+}
+
+
+/* TRAYECTORIA */
+
+.career {
+    background: #101010;
+}
+
+.career-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 55px;
+}
+
+.career-card {
+    position: relative;
+    min-height: 330px;
+    padding: 35px 28px;
+
+    background: #171717;
+    border: 1px solid #292929;
+    border-top: 3px solid #444;
+
+    transition: 0.3s;
+}
+
+.career-card:hover {
+    transform: translateY(-8px);
+    border-color: #e5232d;
+}
+
+.career-card.featured {
+    border-top: 3px solid #e5232d;
+    background: linear-gradient(145deg, #202020, #111111);
+}
+
+.career-year {
+    color: #e5232d;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.result-number {
+    font-size: 75px;
+    font-weight: 900;
+    line-height: 1;
+    margin: 35px 0 20px;
+
+    color: transparent;
+    -webkit-text-stroke: 1.5px white;
+}
+
+.featured .result-number {
+    color: #e5232d;
+    -webkit-text-stroke: 0;
+}
+
+.career-card h3 {
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.career-card p {
+    color: #a2a2a2;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.achievement-label {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 9px 12px;
+
+    border: 1px solid #e5232d;
+    color: #e5232d;
+
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+
+/* PROYECTO 2027 */
+
+.project {
+    background: #141414;
+    overflow: hidden;
+}
+
+.project-content {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+    align-items: center;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.project-year {
+    display: inline-block;
+    color: #e5232d;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin-bottom: 25px;
+}
+
+.project-text h2 {
+    font-size: clamp(45px, 7vw, 85px);
+    font-weight: 900;
+    line-height: 0.9;
+}
+
+.project-text h2 span {
+    display: block;
+    color: #e5232d;
+}
+
+.project-description {
+    color: #a2a2a2;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-top: 30px;
+    max-width: 650px;
+}
+
+.project-highlight {
+    margin-top: 35px;
+    padding: 22px;
+    border-left: 3px solid #e5232d;
+    background: #1d1d1d;
+}
+
+.project-highlight span {
+    color: #e5232d;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.project-highlight h3 {
+    margin-top: 12px;
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+.project-number {
+    position: relative;
+    text-align: center;
+    font-size: clamp(90px, 15vw, 180px);
+    font-weight: 900;
+    line-height: 0.8;
+    color: #252525;
+    letter-spacing: -12px;
+}
+
+.project-number span,
+.project-number strong {
+    display: block;
+}
+
+.project-number strong {
+    color: #e5232d;
+}
+
+.project-number-label {
+    margin-top: 35px;
+    font-size: 11px;
+    color: #a2a2a2;
+    letter-spacing: 5px;
+}
+
+
+/* PATROCINADORES */
+
+.sponsors {
+    background: #090909;
+}
+
+.sponsors-intro {
+    max-width: 850px;
+    margin-top: 35px;
+}
+
+.sponsors-intro p {
+    color: #a2a2a2;
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 55px;
+}
+
+.sponsor-card {
+    min-height: 230px;
+    padding: 35px 28px;
+
+    background: #151515;
+    border: 1px solid #292929;
+    transition: 0.3s;
+}
+
+.sponsor-card:hover {
+    transform: translateY(-7px);
+    border-color: #e5232d;
+}
+
+.sponsor-icon {
+    color: #e5232d;
+    font-size: 35px;
+    font-weight: 900;
+    margin-bottom: 25px;
+}
+
+.sponsor-card h3 {
+    font-size: 17px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.sponsor-card p {
+    color: #a2a2a2;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* LLAMADO A PATROCINADORES */
+
+.sponsors-cta {
+    margin-top: 65px;
+    padding: 55px 40px;
+
+    background: linear-gradient(110deg, #191919, #101010);
+    border-left: 4px solid #e5232d;
+}
+
+.cta-label {
+    color: #e5232d;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.sponsors-cta h3 {
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-top: 25px;
+}
+
+.sponsors-cta h3 span {
+    display: block;
+    color: #e5232d;
+}
+
+.sponsors-cta p {
+    color: #a2a2a2;
+    font-size: 14px;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 25px 0;
+}
+
+
+/* GALERÍA */
+
+.gallery {
+    background: #101010;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 45px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    filter: grayscale(30%);
+    transition: 0.4s;
+}
+
+.gallery-grid img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.02);
+}
+
+
+/* CONTACTO */
+
+.contact {
+    background: #111111;
+}
+
+.contact-content {
+    margin-top: 35px;
+}
+
+.contact-content p {
+    color: #a2a2a2;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 16px 28px;
+    background: #e5232d;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.contact-button:hover {
+    background: white;
+    color: #090909;
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 30px 9%;
+    background: #050505;
+    border-top: 1px solid #222;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+footer p {
+    color: #777;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+footer span {
+    color: #e5232d;
+    font-weight: bold;
+}
+
+
+/* ANIMACIONES */
+
+.section {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+
+    .section {
+        padding: 85px 6%;
+    }
+
+    header {
+        padding: 20px 6%;
+    }
+
+    nav {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        font-size: 9px;
+    }
+
+    .career-grid,
+    .sponsor-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .project-content {
+        grid-template-columns: 1fr;
+    }
+
+    .project-number {
+        margin-top: 35px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 550px) {
+
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero {
+        background-position: 60% center;
+    }
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .career-grid,
+    .sponsor-grid,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid img {
+        height: 240px;
+    }
+
+    .sponsors-cta {
+        padding: 35px 25px;
+    }
+
+    .project-number {
+        letter-spacing: -6px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}

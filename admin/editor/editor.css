@@ -1,0 +1,421 @@
+
+:root {
+  --black: #090909;
+  --panel: #141414;
+  --panel-light: #1d1d1d;
+  --red: #e5232d;
+  --white: #f4f4f4;
+  --gray: #a2a2a2;
+  --border: #303030;
+  --green: #42c78a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+.topbar {
+  min-height: 72px;
+  padding: 0 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #101010;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+.brand span {
+  color: var(--red);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--gray);
+  font-size: 13px;
+}
+
+.container {
+  width: min(1250px, 90%);
+  margin: 50px auto 90px;
+}
+
+.page-heading,
+.panel-heading,
+.records-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.page-heading {
+  margin-bottom: 30px;
+}
+
+.eyebrow {
+  color: var(--red);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+h1 {
+  margin: 8px 0;
+  font-size: clamp(32px, 5vw, 48px);
+  text-transform: uppercase;
+}
+
+h2 {
+  margin: 8px 0;
+  font-size: 23px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+.muted {
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+.back-link {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.back-link:hover {
+  color: var(--red);
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.panel {
+  padding: 27px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  min-width: 0;
+}
+
+.panel-heading {
+  margin-bottom: 25px;
+}
+
+.status {
+  color: var(--gray);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  padding: 8px 12px;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin: 17px 0;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+input:not([type="checkbox"]),
+textarea,
+select {
+  width: 100%;
+  padding: 13px;
+  color: var(--white);
+  background: #0b0b0b;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  outline: none;
+}
+
+select {
+  cursor: pointer;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--red);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.section-description {
+  color: var(--gray);
+  font-size: 12px;
+  margin: 12px 0 25px;
+  line-height: 1.6;
+}
+
+.form-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  padding-top: 17px;
+}
+
+.form-heading span {
+  color: var(--gray);
+  font-size: 11px;
+}
+
+.dynamic-field {
+  margin-top: 8px;
+}
+
+.publish-option {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  font-weight: 400;
+}
+
+.publish-option input {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--red);
+}
+
+.button-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 17px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background: var(--red);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #bd1821;
+}
+
+.btn-outline {
+  color: var(--white);
+  background: transparent;
+  border-color: var(--border);
+}
+
+.btn-outline:hover {
+  border-color: var(--red);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.message {
+  min-height: 18px;
+  color: var(--gray);
+  font-size: 12px;
+}
+
+.message.error {
+  color: #ff7777;
+}
+
+.message.success {
+  color: var(--green);
+}
+
+.preview-content {
+  min-height: 280px;
+  padding: 23px;
+  background: #0b0b0b;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  overflow-wrap: anywhere;
+}
+
+.preview-category {
+  color: var(--red);
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+
+.preview-content h2 {
+  font-size: 27px;
+  text-transform: uppercase;
+}
+
+.preview-fields {
+  margin-top: 20px;
+  color: #ccc;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.preview-fields p {
+  white-space: pre-wrap;
+}
+
+.preview-fields img {
+  display: block;
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-top: 12px;
+}
+
+.preview-status {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 7px 10px;
+  color: #e7b85b;
+  border: 1px solid #6b5428;
+  border-radius: 4px;
+  font-size: 10px;
+}
+
+.preview-status.published {
+  color: var(--green);
+  border-color: #276d4d;
+}
+
+.records-section {
+  margin-top: 50px;
+}
+
+.records-heading {
+  margin-bottom: 20px;
+}
+
+.records-list {
+  display: grid;
+  gap: 13px;
+}
+
+.record {
+  padding: 20px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--red);
+  border-radius: 7px;
+}
+
+.record-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.record h3 {
+  margin: 0 0 8px;
+}
+
+.record p {
+  color: var(--gray);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.record-state {
+  font-size: 10px;
+  color: var(--green);
+  white-space: nowrap;
+}
+
+.record-state.draft {
+  color: #e7b85b;
+}
+
+.record-actions {
+  display: flex;
+  gap: 9px;
+  margin-top: 13px;
+}
+
+.small-btn {
+  padding: 8px 12px;
+  color: var(--white);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.small-btn:hover {
+  border-color: var(--red);
+}
+
+@media (max-width: 850px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin-top: 30px;
+  }
+
+  .page-heading,
+  .panel-heading,
+  .records-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .panel {
+    padding: 19px;
+  }
+
+  .header-actions span {
+    display: none;
+  }
+}
