@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -10,131 +9,14 @@
 
     <meta name="description" content="Sitio oficial de Franco Naranjo, piloto costarricense de motociclismo y primer costarricense en competir en una categoría del programa Road to MotoGP.">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
-
-    <style>
-        /* BANDA DE PATROCINADORES */
-
-        .sponsor-strip {
-            width: 100%;
-            padding: 45px 0;
-            background: #090909;
-            border-top: 1px solid #252525;
-            border-bottom: 1px solid #252525;
-            overflow: hidden;
-        }
-
-        .sponsor-strip-heading {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #a2a2a2;
-            font-size: 11px;
-            font-weight: bold;
-            letter-spacing: 4px;
-        }
-
-        .sponsor-strip-heading span {
-            color: #e5232d;
-        }
-
-        .sponsor-marquee {
-            width: 100%;
-            overflow: hidden;
-        }
-
-        .sponsor-marquee-track {
-            display: flex;
-            align-items: center;
-            width: max-content;
-            animation: sponsor-scroll 35s linear infinite;
-        }
-
-        .sponsor-marquee:hover .sponsor-marquee-track {
-            animation-play-state: paused;
-        }
-
-        .sponsor-marquee-item {
-            width: 210px;
-            height: 90px;
-            margin: 0 35px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .sponsor-marquee-item img {
-            display: block;
-            max-width: 170px;
-            max-height: 65px;
-            width: auto;
-            height: auto;
-            object-fit: contain;
-            filter: grayscale(100%);
-            opacity: 0.75;
-            transition: filter 0.3s ease, opacity 0.3s ease;
-        }
-
-        .sponsor-marquee-item img:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-        }
-
-        @keyframes sponsor-scroll {
-            from {
-                transform: translateX(0);
-            }
-
-            to {
-                transform: translateX(-50%);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .sponsor-strip {
-                padding: 35px 0;
-            }
-
-            .sponsor-marquee-item {
-                width: 150px;
-                height: 75px;
-                margin: 0 20px;
-            }
-
-            .sponsor-marquee-item img {
-                max-width: 125px;
-                max-height: 50px;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .sponsor-marquee-track {
-                animation: none;
-            }
-        }
-    </style>
 </head>
 
 <body>
-
-    <!-- HEADER -->
-
-    <header>
-
-        <a href="#home" class="logo">
-            FRANCO <span>NARANJO</span>
-        </a>
-
-        <nav>
-            <a href="#about">EL PILOTO</a>
-            <a href="#career">TRAYECTORIA</a>
-            <a href="#project">PROYECTO 2027</a>
-            <a href="#sponsors">PATROCINIO</a>
-            <a href="#gallery">GALERÍA</a>
-            <a href="#contact">CONTACTO</a>
-        </nav>
-
-    </header>
 
     <main>
 
@@ -142,30 +24,47 @@
 
         <section class="hero" id="home">
 
-            <div class="hero-content">
+            <header class="main-header">
 
-                <div class="section-label">
-                    COSTA RICA · MOTOVELOCIDAD
+                <nav aria-label="Navegación principal">
+                    <a href="#home">INICIO</a>
+                    <a href="#about">EL PILOTO</a>
+                    <a href="#career">TRAYECTORIA</a>
+                    <a href="#project">PROYECTO 2027</a>
+                    <a href="#sponsors">PATROCINIO</a>
+                    <a href="#gallery">GALERÍA</a>
+                    <a href="#contact">CONTACTO</a>
+                </nav>
+
+            </header>
+
+            <div class="hero-name">
+                FRANCO NARANJO
+            </div>
+
+            <div class="hero-bottom">
+
+                <div class="hero-slogan">
+                    WITHOUT DISCIPLINE,<br>
+                    THERE IS NO <span>GLORY.</span>
                 </div>
 
-                <h1>
-                    FRANCO
-                    <span>NARANJO</span>
-                </h1>
-
-                <p>
-                    Without discipline, there is no glory.
-                </p>
-
-                <div class="hero-number">
-                    ROAD TO MOTOGP · 2027
+                <div class="hero-project-label">
+                    <span>ROAD TO MOTOGP</span>
+                    <strong>MOTO4 LATIN CUP 2027</strong>
                 </div>
 
             </div>
 
+            <div class="hero-scroll">
+                <span>DESCUBRE MI HISTORIA</span>
+                <div></div>
+            </div>
+
         </section>
 
-        <!-- SOBRE EL PILOTO -->
+
+        <!-- EL PILOTO -->
 
         <section class="section about" id="about">
 
@@ -173,36 +72,62 @@
                 01 / CONOCE AL PILOTO
             </div>
 
-            <h2>
-                MÁS QUE UNA
-                <span>PASIÓN.</span>
-            </h2>
+            <div class="about-layout">
 
-            <div class="about-content">
+                <div class="about-photo">
+                    <img
+                        src="assets/about.jpg"
+                        alt="Franco Naranjo, piloto costarricense"
+                        loading="lazy"
+                    >
 
-                <p>
-                    Soy Franco Naranjo, piloto costarricense
-                    de motociclismo. Mi carrera deportiva está
-                    marcada por el esfuerzo, la disciplina y la constancia.
-                    Mi objetivo es competir al más alto nivel
-                    y seguir creciendo como piloto profesional.
-                </p>
+                    <div class="photo-caption">
+                        <span>FRANCO NARANJO</span>
+                        <span>COSTA RICA</span>
+                    </div>
+                </div>
 
-                <p>
-                    Mi próximo gran paso será competir en Moto4
-                    Latin Cup en 2027. Con ello, me convertiré en el
-                    primer costarricense en participar en una categoría
-                    del programa Road to MotoGP, una iniciativa que
-                    impulsa el desarrollo de jóvenes pilotos y les
-                    ofrece un camino hacia las categorías superiores
-                    del motociclismo, con el objetivo de llegar a MotoGP.
-                    Este logro representa un paso importante para mi
-                    carrera y para el motociclismo de Costa Rica.
-                </p>
+                <div class="about-information">
+
+                    <h2>
+                        MÁS QUE UN PILOTO.
+                        <span>UNA META.</span>
+                    </h2>
+
+                    <div class="about-content">
+
+                        <p>
+                            Soy Franco Naranjo, piloto costarricense
+                            de motociclismo. Mi carrera deportiva está
+                            marcada por el esfuerzo, la disciplina y la constancia.
+                            Mi objetivo es competir al más alto nivel
+                            y seguir creciendo como piloto profesional.
+                        </p>
+
+                        <p>
+                            Mi próximo gran paso será competir en Moto4
+                            Latin Cup en 2027. Con ello, me convertiré en el
+                            primer costarricense en participar en una categoría
+                            del programa Road to MotoGP, una iniciativa que
+                            impulsa el desarrollo de jóvenes pilotos y les
+                            ofrece un camino hacia las categorías superiores
+                            del motociclismo, con el objetivo de llegar a MotoGP.
+                            Este logro representa un paso importante para mi
+                            carrera y para el motociclismo de Costa Rica.
+                        </p>
+
+                    </div>
+
+                    <div class="about-signature">
+                        <span>DISCIPLINE · DETERMINATION · PASSION</span>
+                    </div>
+
+                </div>
 
             </div>
 
         </section>
+
 
         <!-- TRAYECTORIA -->
 
@@ -212,26 +137,27 @@
                 02 / RESULTADOS Y TRAYECTORIA
             </div>
 
-            <h2>
-                MI CAMINO
-                <span>EN LAS PISTAS.</span>
-            </h2>
+            <div class="section-heading-row">
+                <h2>
+                    MI CAMINO
+                    <span>EN LAS PISTAS.</span>
+                </h2>
+
+                <p class="section-side-text">
+                    CADA TEMPORADA ES UN NUEVO DESAFÍO.
+                    CADA RESULTADO, PARTE DEL CAMINO.
+                </p>
+            </div>
 
             <div class="career-grid">
 
                 <article class="career-card featured">
 
-                    <span class="career-year">
-                        ACTUALIDAD
-                    </span>
+                    <span class="career-year">ACTUALIDAD</span>
 
-                    <div class="result-number">
-                        01
-                    </div>
+                    <div class="result-number">01</div>
 
-                    <h3>
-                        LÍDER ACTUAL · MM2
-                    </h3>
+                    <h3>LÍDER ACTUAL · MM2</h3>
 
                     <p>
                         Primer lugar actual de la categoría MM2
@@ -244,44 +170,32 @@
 
                 </article>
 
+
                 <article class="career-card">
 
-                    <span class="career-year">
-                        2019
-                    </span>
+                    <span class="career-year">2019</span>
 
-                    <div class="result-number">
-                        03
-                    </div>
+                    <div class="result-number">03</div>
 
-                    <h3>
-                        MINIGP
-                    </h3>
+                    <h3>MINIGP</h3>
 
                     <p>
                         Tercer lugar en la categoría MiniGP
                         del campeonato 2019.
                     </p>
 
-                    <span class="achievement-label">
-                        PODIO
-                    </span>
+                    <span class="achievement-label">PODIO</span>
 
                 </article>
 
+
                 <article class="career-card future-card">
 
-                    <span class="career-year">
-                        2027
-                    </span>
+                    <span class="career-year">2027</span>
 
-                    <div class="result-number">
-                        M4
-                    </div>
+                    <div class="result-number">M4</div>
 
-                    <h3>
-                        MOTO4 LATIN CUP
-                    </h3>
+                    <h3>MOTO4 LATIN CUP</h3>
 
                     <p>
                         Mi participación en una categoría del
@@ -298,6 +212,7 @@
             </div>
 
         </section>
+
 
         <!-- PROYECTO 2027 -->
 
@@ -338,15 +253,33 @@
 
                     </div>
 
+                    <a href="#contact" class="project-button">
+                        APOYAR EL PROYECTO
+                        <span>↗</span>
+                    </a>
+
                 </div>
 
-                <div class="project-number">
 
-                    <span>20</span>
-                    <strong>27</strong>
+                <div class="project-visual">
 
-                    <div class="project-number-label">
-                        MOTO4 LATIN CUP
+                    <div class="project-visual-top">
+                        ROAD TO MOTOGP
+                    </div>
+
+                    <div class="project-number">
+                        <span>20</span>
+                        <strong>27</strong>
+                    </div>
+
+                    <div class="project-visual-bottom">
+                        <span>MOTO4</span>
+                        <strong>LATIN CUP</strong>
+                    </div>
+
+                    <div class="project-placeholder">
+                        FOTOGRAFÍA OFICIAL<br>
+                        PRÓXIMAMENTE
                     </div>
 
                 </div>
@@ -355,7 +288,8 @@
 
         </section>
 
-        <!-- PATROCINIO -->
+
+        <!-- PATROCINADORES -->
 
         <section class="section sponsors" id="sponsors">
 
@@ -364,8 +298,8 @@
             </div>
 
             <h2>
-                SÉ PARTE DE
-                <span>ESTA HISTORIA.</span>
+                MARCAS QUE
+                <span>IMPULSAN EL CAMINO.</span>
             </h2>
 
             <div class="sponsors-intro">
@@ -388,6 +322,7 @@
 
             </div>
 
+
             <div class="sponsor-grid">
 
                 <article class="sponsor-card">
@@ -404,6 +339,7 @@
 
                 </article>
 
+
                 <article class="sponsor-card">
 
                     <div class="sponsor-icon">02</div>
@@ -417,6 +353,7 @@
                     </p>
 
                 </article>
+
 
                 <article class="sponsor-card">
 
@@ -433,6 +370,7 @@
                 </article>
 
             </div>
+
 
             <div class="sponsors-cta">
 
@@ -462,7 +400,8 @@
 
         </section>
 
-        <!-- GALERÍA CON CARRUSEL -->
+
+        <!-- GALERÍA -->
 
         <section class="section gallery" id="gallery">
 
@@ -470,10 +409,17 @@
                 05 / MOMENTOS EN PISTA
             </div>
 
-            <h2>
-                RACING
-                <span>MOMENTS.</span>
-            </h2>
+            <div class="gallery-heading">
+                <h2>
+                    RACING
+                    <span>MOMENTS.</span>
+                </h2>
+
+                <p>
+                    CADA IMAGEN CUENTA UNA PARTE DEL CAMINO.
+                </p>
+            </div>
+
 
             <div class="gallery-carousel" id="gallery-carousel">
 
@@ -502,6 +448,7 @@
 
                 </div>
 
+
                 <button
                     class="gallery-arrow gallery-prev"
                     id="gallery-prev"
@@ -522,6 +469,7 @@
 
             </div>
 
+
             <div
                 class="gallery-dots"
                 id="gallery-dots"
@@ -534,7 +482,8 @@
 
         </section>
 
-        <!-- BANDA DESLIZANTE DE PATROCINADORES -->
+
+        <!-- BANDA DE PATROCINADORES -->
 
         <section
             class="sponsor-strip"
@@ -558,6 +507,7 @@
 
         </section>
 
+
         <!-- CONTACTO -->
 
         <section class="section contact" id="contact">
@@ -566,31 +516,49 @@
                 06 / CONTACTO
             </div>
 
-            <h2>
-                LET'S TALK
-                <span>RACING.</span>
-            </h2>
+            <div class="contact-layout">
 
-            <div class="contact-content">
+                <div>
+                    <h2>
+                        HAGAMOS
+                        <span>HISTORIA JUNTOS.</span>
+                    </h2>
 
-                <p>
-                    Para consultas profesionales, oportunidades
-                    de patrocinio y colaboraciones deportivas,
-                    puedes ponerte en contacto.
-                </p>
+                    <p class="contact-description">
+                        Cada gran proyecto necesita personas y marcas
+                        que crean en él. Para consultas profesionales,
+                        oportunidades de patrocinio y colaboraciones
+                        deportivas, puedes ponerte en contacto.
+                    </p>
+                </div>
 
-                <a
-                    href="mailto:franco.naranjo.montero.13@gmail.com"
-                    class="contact-button"
-                >
-                    CONTACTAR
-                </a>
+                <div class="contact-action">
+
+                    <span>CONTACTO PROFESIONAL</span>
+
+                    <a
+                        href="mailto:franco.naranjo.montero.13@gmail.com"
+                        class="contact-button"
+                    >
+                        HABLEMOS
+                        <span>↗</span>
+                    </a>
+
+                    <a
+                        class="contact-email"
+                        href="mailto:franco.naranjo.montero.13@gmail.com"
+                    >
+                        franco.naranjo.montero.13@gmail.com
+                    </a>
+
+                </div>
 
             </div>
 
         </section>
 
     </main>
+
 
     <!-- FOOTER -->
 
@@ -607,7 +575,9 @@
 
     </footer>
 
+
     <script src="script.js"></script>
+
 
     <!-- FUNCIONAMIENTO DEL CARRUSEL -->
 
@@ -679,5 +649,4 @@
     </script>
 
 </body>
-
 </html>
