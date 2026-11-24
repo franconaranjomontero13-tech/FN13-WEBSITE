@@ -200,19 +200,18 @@ button {
 
 .hero-name {
     position: absolute;
-    top: 50%;
-    left: 7%;
+    left: 9%;
+    bottom: 27%;
 
-    transform: translate(-50%, -50%) rotate(-90deg);
-    transform-origin: center;
-
-    width: max-content;
+    width: auto;
+    transform: none;
 
     color: var(--ice-white);
     font-family: var(--font-title);
-    font-size: clamp(30px, 5vw, 65px);
+    font-size: clamp(42px, 7vw, 95px);
     font-weight: 700;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
+    line-height: 1.1;
     white-space: nowrap;
 
     text-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
