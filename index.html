@@ -13,9 +13,7 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* =================================
-           BANDA DE PATROCINADORES
-           ================================= */
+        /* BANDA DE PATROCINADORES */
 
         .sponsor-strip {
             width: 100%;
@@ -464,7 +462,7 @@
 
         </section>
 
-        <!-- GALERÍA -->
+        <!-- GALERÍA CON CARRUSEL -->
 
         <section class="section gallery" id="gallery">
 
@@ -477,23 +475,61 @@
                 <span>MOMENTS.</span>
             </h2>
 
-            <div class="gallery-grid">
+            <div class="gallery-carousel" id="gallery-carousel">
 
-                <img
-                    src="assets/gallery-1.jpg"
-                    alt="Franco Naranjo en competición"
+                <div class="gallery-track" id="gallery-track">
+
+                    <div class="gallery-slide">
+                        <img
+                            src="assets/gallery-1.jpg"
+                            alt="Franco Naranjo en competición"
+                        >
+                    </div>
+
+                    <div class="gallery-slide">
+                        <img
+                            src="assets/gallery-2.jpg"
+                            alt="Franco Naranjo durante un entrenamiento"
+                        >
+                    </div>
+
+                    <div class="gallery-slide">
+                        <img
+                            src="assets/gallery-3.jpg"
+                            alt="Franco Naranjo en motociclismo"
+                        >
+                    </div>
+
+                </div>
+
+                <button
+                    class="gallery-arrow gallery-prev"
+                    id="gallery-prev"
+                    type="button"
+                    aria-label="Fotografía anterior"
                 >
+                    &#10094;
+                </button>
 
-                <img
-                    src="assets/gallery-2.jpg"
-                    alt="Franco Naranjo durante un entrenamiento"
+                <button
+                    class="gallery-arrow gallery-next"
+                    id="gallery-next"
+                    type="button"
+                    aria-label="Fotografía siguiente"
                 >
+                    &#10095;
+                </button>
 
-                <img
-                    src="assets/gallery-3.jpg"
-                    alt="Franco Naranjo en motociclismo"
-                >
+            </div>
 
+            <div
+                class="gallery-dots"
+                id="gallery-dots"
+                aria-label="Seleccionar fotografía"
+            >
+                <button class="gallery-dot active" type="button" aria-label="Fotografía 1"></button>
+                <button class="gallery-dot" type="button" aria-label="Fotografía 2"></button>
+                <button class="gallery-dot" type="button" aria-label="Fotografía 3"></button>
             </div>
 
         </section>
@@ -572,6 +608,75 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- FUNCIONAMIENTO DEL CARRUSEL -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const carousel = document.getElementById("gallery-carousel");
+            const track = document.getElementById("gallery-track");
+            const prev = document.getElementById("gallery-prev");
+            const next = document.getElementById("gallery-next");
+            const dots = document.querySelectorAll(".gallery-dot");
+
+            if (!carousel || !track || !prev || !next || dots.length === 0) {
+                return;
+            }
+
+            const total = dots.length;
+            let current = 0;
+            let touchStartX = 0;
+
+            function showSlide(index) {
+
+                current = (index + total) % total;
+
+                track.style.transform = `translateX(-${current * 100}%)`;
+
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle("active", i === current);
+                });
+
+            }
+
+            next.addEventListener("click", function () {
+                showSlide(current + 1);
+            });
+
+            prev.addEventListener("click", function () {
+                showSlide(current - 1);
+            });
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener("click", function () {
+                    showSlide(index);
+                });
+            });
+
+            carousel.addEventListener("touchstart", function (event) {
+                touchStartX = event.changedTouches[0].screenX;
+            }, { passive: true });
+
+            carousel.addEventListener("touchend", function (event) {
+
+                const touchEndX = event.changedTouches[0].screenX;
+                const difference = touchStartX - touchEndX;
+
+                if (Math.abs(difference) > 50) {
+                    if (difference > 0) {
+                        showSlide(current + 1);
+                    } else {
+                        showSlide(current - 1);
+                    }
+                }
+
+            }, { passive: true });
+
+            showSlide(0);
+
+        });
+    </script>
 
 </body>
 
