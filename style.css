@@ -1,3 +1,4 @@
+
 /* =========================================
    FRANCO NARANJO
    HYBRID RACING EDITORIAL
@@ -195,20 +196,22 @@ button {
 
 
 /* =========================================
-   NOMBRE VERTICAL
+   NOMBRE PRINCIPAL - HORIZONTAL
    ========================================= */
 
 .hero-name {
     position: absolute;
+    z-index: 3;
+
     left: 9%;
-    bottom: 27%;
+    bottom: 36%;
 
     width: auto;
     transform: none;
 
     color: var(--ice-white);
     font-family: var(--font-title);
-    font-size: clamp(42px, 7vw, 95px);
+    font-size: clamp(38px, 6.7vw, 95px);
     font-weight: 700;
     letter-spacing: 2px;
     line-height: 1.1;
@@ -1235,8 +1238,9 @@ footer span {
 
     .hero-name {
         left: 8%;
+        bottom: 37%;
         font-size: clamp(27px, 7vw, 42px);
-        letter-spacing: 3px;
+        letter-spacing: 1.2px;
     }
 
     .hero-bottom {
@@ -1383,7 +1387,9 @@ footer span {
 
     .hero-name {
         left: 9%;
+        bottom: 38%;
         font-size: 25px;
+        letter-spacing: 1px;
     }
 
     .hero-bottom {
